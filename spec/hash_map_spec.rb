@@ -76,7 +76,7 @@ describe HashMap do
     it 'iterates through all items and yields each key-value pair' do
       idx = 0
       values = (1..3).to_a
-      hash.my_each do |key, value|
+      hash.each do |key, value|
         expect(value).to eq values[idx]
         idx += 1
       end

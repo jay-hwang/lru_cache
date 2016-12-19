@@ -38,7 +38,7 @@ class HashMap
     @count -= 1
   end
 
-  def my_each
+  def each
     @store.each do |bucket|
       bucket.each { |link| yield [link.key, link.val] }
     end
