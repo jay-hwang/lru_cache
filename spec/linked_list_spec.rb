@@ -1,7 +1,7 @@
 require 'rspec'
 require 'linked_list'
 
-desribe LinkedList do
+describe LinkedList do
   let(:test_hash) do
     { first: 1, second: 2, third: 3 }
   end
@@ -26,14 +26,6 @@ desribe LinkedList do
     end
   end
 
-  describe '#remove' do
-    it 'removes a link by key' do
-      expect(list.get(:first)).to eq 1
-      list.remove(:first)
-      expect(list.get(:first)).to be_nil
-    end
-  end
-
   describe '#include?' do
     it 'returns true if key is present' do
       expect(list.include?(:first)).to be true
@@ -44,10 +36,28 @@ desribe LinkedList do
     end
   end
 
+  describe '#remove' do
+    it 'removes a link by key' do
+      expect(list.get(:first)).to eq 1
+      list.remove(:first)
+      expect(list.get(:first)).to be_nil
+    end
+  end
+
+  describe '#empty?' do
+    it 'returns true if list is empty' do
+      expect(LinkedList.new.empty?).to be true
+    end
+
+    it 'returns false if list is not empty' do
+      expect(list.empty?).to be false
+    end
+  end
+
   describe '#each' do
     it 'iterates through list and yields each link' do
       list_values = test_hash.values
-      yielded_list_value = []
+      yielded_list_values = []
       list.each do |link|
         yielded_list_values << link.val
       end
