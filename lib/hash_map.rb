@@ -39,9 +39,7 @@ class HashMap
   end
 
   def each
-    @store.each do |bucket|
-      bucket.each { |link| yield [link.key, link.val] }
-    end
+    # default each
   end
 
   def to_s

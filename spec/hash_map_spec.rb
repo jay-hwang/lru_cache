@@ -72,7 +72,7 @@ describe HashMap do
     end
   end
 
-  describe '#my_each' do
+  describe '#each' do
     it 'iterates through all items and yields each key-value pair' do
       idx = 0
       values = (1..3).to_a

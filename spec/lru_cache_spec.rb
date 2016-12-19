@@ -1,5 +1,5 @@
 require 'rspec'
-require 'p06_lru_cache'
+require 'lru_cache'
 
 describe LRUCache do
   describe "#get" do
@@ -36,10 +36,10 @@ describe LRUCache do
       end
 
       lru.get(0)
-      1.upto(3) { |i| lru.get(i) } 
-      lru.get(0) 
-      lru.get(2) 
-      lru.get(3) 
+      1.upto(3) { |i| lru.get(i) }
+      lru.get(0)
+      lru.get(2)
+      lru.get(3)
     end
   end
 end
